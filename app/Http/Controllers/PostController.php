@@ -50,4 +50,37 @@ class PostController extends Controller
         return redirect('/posts');
 
     }
+
+    public function delete(Request $request){
+
+    $post = Post::findOrFail($request->id);
+    $post->delete();
+
+        return redirect('/posts');
+
+    }
+
+    public function create(){
+
+       return view('posts.create');
+
+    }
+
+    public function save(Request $request){
+
+        request()->validate([
+
+            'title'=>'required',
+            'content'=>'required'
+
+        ]);
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->save();
+
+        return redirect('/posts');
+
+    }
 }

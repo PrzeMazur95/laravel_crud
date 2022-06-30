@@ -9,6 +9,15 @@
     <title>Document</title>
 </head>
 <body>
+<div class="text-center">
+    <form action="/create">
+
+        <button type="submit" class="text-center bg-transparent hover:bg-green-500 text-green-700 font-semi-bold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+            Create new post
+        </button>
+
+    </form>
+</div>
 <div style="width: 900px;" class="container max-w-full mx-auto pt-4">
     @foreach($posts as $post)
         <a href="/posts/{{$post->id}}">
