@@ -10,14 +10,16 @@
 </head>
 <body>
 <div style="width: 900px;" class="container max-w-full mx-auto pt-4">
-    @foreach($posts as $post)
-        <a href="/posts/{{$post->id}}">
             <article class="mb-4 text-center">
                 <h2 class="text-x1 font-bold text-gray-900">{{$post->title}}</h2>
                 <p class="text-md text-gray-600">{{$post->content}}</p>
             </article>
-        </a>
-    @endforeach
+    <form action="/posts/{{$post->id}}/edit" class="text-center">
+        <button type="submit" class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Edit
+        </button>
+    </form>
+
 </div>
 </body>
 </html>

@@ -14,7 +14,6 @@ class PostTest extends TestCase
      * @return void
      */
 
-    use RefreshDatabase;
 
     public function test_example()
     {
@@ -27,6 +26,22 @@ class PostTest extends TestCase
         $posts = new Post;
 
         $this->assertIsObject($posts);
+
+
+    }
+
+//    public function test_if_we_can_get_to_show_page()
+//    {
+//
+//        $response = $this->get('/posts');
+//        $response->assertStatus(200);
+//    }
+
+    public function test_if_we_can_find_all_posts()
+    {
+
+        $posts = Post::all();
+
 
 
     }
