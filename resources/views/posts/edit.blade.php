@@ -10,7 +10,7 @@
 </head>
 <body>
 <div style="width: 900px;" class="container max-w-full mx-auto pt-4 text-center">
-    <input method="POST" action="/posts/{{$post->id}}">
+    <form method="POST" action="/posts/{{$post->id}}">
         @method('PUT')
         @csrf
 
@@ -25,6 +25,8 @@
             <label class="font-bold text-gray-800" for="Content">Content: </label>
             <textarea class="text-center h-16 bg-white border border-gray-300 rounded py-4 px-3 mr-4 w-full text-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:ring-0" id="Content" name="content" >{{$post->content}}</textarea>
         </div>
+
+        <input type="hidden" name="id" value="{{$post->id}}">
 
         <button type="submit" class="text-center bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
             Update
